@@ -11,8 +11,11 @@ test('first test', async ({page}) => {
 
     // Text input for username
     await page.getByRole('textbox', {name: 'email'}).fill('maggie.turner+test@att.net');
-    // Text input for password
+    // // Text input for password (Correct password)
     await page.getByRole('textbox', {name: 'password'}).fill('123password!@');  
+
+    // Text input for password (Wrong passeword)
+    // await page.getByRole('textbox', {name: 'password'}).fill('123password!');  
 
     // Expect Log In button to no longer be visible if user is logged in
     await page.getByRole('button', { name: 'Log In'}).click();
